@@ -51,9 +51,11 @@ const audioStream = async function* () {
 };
 
 const command = new StartStreamTranscriptionCommand({
-  LanguageCode: LanguageCode.EN_US,
+  //LanguageCode: LanguageCode.EN_US,
   MediaEncoding: MediaEncoding.PCM,
   MediaSampleRateHertz: sampleRate,
+  IdentifyLanguage: true,
+  LanguageOptions: "en-US,de-DE",
   AudioStream: audioStream(),
 });
 
